@@ -1,2 +1,2 @@
 # the-dark-side-of-cpp
-Questo progetto mira a diventare una guida per nuovi sviluppatori in c++ seguendo un percorso di progetti da sviluppare dove la difficoltà cresce man mano per prendere confidenza con le caratteristiche del linguaggio
+This project aims to become a guide for new developers in C ++ following a path of projects to be developed where the difficulty increases as you become familiar with the characteristics of the language.
