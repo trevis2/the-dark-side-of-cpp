@@ -1,0 +1,32 @@
+1. Contesto
+Cosa sono i linguaggi di programmazione?
+In letteratura i liguaggi di programmazione si dividono in 2 categorie: alto livello e basso livello.
+Alto livello quando il linguaggio è facilmente comprensibile agli esseri umani e caratterizzato da una significativa astrazione dai dettagli del funzionamento di un calcolatore
+e dalle caratteristiche del linguaggio macchina(ad. es non mi preoccupo di scrivere il codice che sposta il contenuto di una cella di memoria).
+Questo invece è un linguaggio di basso livello e permette al sistema operativo di eseguire comandi sull'hardware della macchina.
+Il linguaggio macchina dipende dall'architettura hardware del computer. Varia a seconda del processore(CPU). Pertanto, non esiste un unico linguaggio macchina.
+Un programma scritto in linguaggio macchina per un'architettura, non funziona in un'altra architettura.
+
+Cos'è il C++?
+Il C++ è un linguaggio di programmazione progettato ed implementato(nel 1986) da Bjarne Stroustrup(https://www.stroustrup.com/).
+In particolare è un linguaggio di programmazione(alto livello) è un'insieme di caratteri e di simboli, che permettono,
+attraverso le regole di scrittura proprie del linguaggio, di scrivere delle istruzioni direttamente e facilmente comprensibili agli esseri umani,
+ma che possono essere tradotte da un compilatore, in linguaggio macchina(basso livello), ed essere comprensibili direttamente al sistema operativo 
+installato sulla macchina il quale si occuperà di eseguirle fisicamente sull'hardware.
+ 
+Il sistema operativo è il software che agisce direttamente sui componenti HW. Il sistema operativo virtualizza le caratteristiche dell'Hardware offrendo
+una macchina astratta più semplice da usare di quella fisicamente disponibile. La parte che comunica con l'hardware è detta nucleo o
+kernel che fondamentalmente gestisce i processi che sono contemporaneamente attivi, attua lo scheduling dei processi per l’accesso alla CPU 
+ (definisce quale processo è da eseguire in ogni istante)e gestisce il contesto di esecuzione dei vari processi.
+Un S.O. gestisce una qualsiasi elaborazione come un'insieme di unità di elaborazioni parziali dette processi, ovvero 
+la minima unità di lavoro che il S.O. predispone per l'esecuzione e che possa individualmente richiedere l’uso della CPU.
+
+
+Per progettazione "top-down" si intende un approccio alla soluzione di un problema usando
+strumenti informatici, basato essenzialmente sulla decomposizione di un problema generale in un
+certo numero di sottoproblemi correlati e logicamente distinti, ognuno dei quali è, per le sue
+"dimensioni" più ridotte, più semplice da risolvere (nel senso di determinare un algoritmo risolutivo) del
+problema generale. Il procedimento può essere iterato più volte, decomponendo ulteriormente i
+sottoproblemi, in un procedimento che quindi procede per raffinamenti successivi, finchè non si arriva
+a un livello di dettaglio sufficiente da rendere agevole la definizione dei vari algoritmi e la loro
+traduzione in un linguaggio di programmazione
