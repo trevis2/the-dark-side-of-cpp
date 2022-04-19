@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Models/Cube.obj</file>
+        <file>Models/Cube.mtl</file>
+        <file>Models/monkey.obj</file>
+        <file>Models/Patrick.obj</file>
+        <file>Models/Cube_tri.obj</file>
+        <file>Models/suzanne.obj</file>
+    </qresource>
+</RCC>
