@@ -4,27 +4,37 @@ GLWin::GLWin(QWidget *parent)
     : QGLWidget(parent)
 {
     wireFrameMode = false;
+    scale = 1.0f;
+    s0 = 1.001f;
     xTra = 0;
     yTra = 0;
     zTra = 0;
     iRot = 0;
+    m_xRot = 0;
+    m_yRot = 0;
+    m_zRot = 0;
     shadingMode = true;//true is SMOOTH
     fov = 45;// Field of view in degrees
     zN = 5;  //near Z near
     zF = 100;// Z far
-    LightAmbient[0] = 1.0f;
-    LightAmbient[1] = 1.0f;
-    LightAmbient[2] = 1.0f;
+    LightAmbient[0] = 1.0f; // R
+    LightAmbient[1] = 1.0f;  // G
+    LightAmbient[2] = 1.0f;  // B
     LightAmbient[3] = 1.0f;
 
-    LightDiffuse[0] = 1.0f;
-    LightDiffuse[1] = 1.0f;
-    LightDiffuse[2] = 1.0f;
+    LightDiffuse[0] = 1.0f; // R Shadows
+    LightDiffuse[1] = 1.0f; // G
+    LightDiffuse[2] = 1.0f; // B
     LightDiffuse[3] = 1.0f;
 
-    LightPosition[0] = 0.0f;
-    LightPosition[1] = 0.0f;
-    LightPosition[2] = 1.5f;
+    LightSpecular[0] = 1.0f; // R Shadows
+    LightSpecular[1] = 1.0f; // G
+    LightSpecular[2] = 1.0f; // B
+    LightSpecular[3] = 1.0f;
+
+    LightPosition[0] = 0.0f; // X
+    LightPosition[1] = 0.0f; // Y
+    LightPosition[2] = 1.5f; // Z
     LightPosition[3] = 1.0f;
 
     resize(500,500);//window size
@@ -44,21 +54,22 @@ GLWin::~GLWin()
 }
 void GLWin::initializeGL()
 {
-    qglClearColor(Qt::black);
+    qglClearColor(Qt::blue);
     idx = paintMdl();
     //glClearDepth( 1.0f );
     glEnable(GL_DEPTH_TEST);
     glDepthFunc( GL_LEQUAL );
     glEnable (GL_LIGHTING); //enable the lighting
-    glLightfv(GL_LIGHT0, GL_AMBIENT, LightAmbient);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, LightDiffuse);
-    glLightfv(GL_LIGHT0, GL_POSITION, LightPosition);
     glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.0);
     glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.2);
     glLightf(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.3);
     glEnable(GL_LIGHT0);
-    glShadeModel(GL_FLAT);
     glEnable(GL_CULL_FACE);
+    glEnable(GL_LIGHT0);
+    glEnable(GL_MULTISAMPLE);
+    glShadeModel(GL_SMOOTH);
+    glHint(GL_POLYGON_SMOOTH_HINT, GL_FASTEST);
+    glEnable(GL_POLYGON_SMOOTH);
 }
 void GLWin::resizeGL(int nWidth, int nHeight)
 {
@@ -75,11 +86,33 @@ void GLWin::resizeGL(int nWidth, int nHeight)
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 }
+
+void GLWin::lights()
+{
+  using namespace std;
+  glEnable(GL_LIGHTING);
+  glLightModelf(GL_LIGHT_MODEL_TWO_SIDE,GL_TRUE);
+  glEnable(GL_LIGHT0);
+  glEnable(GL_LIGHT1);
+  glLightfv(GL_LIGHT0,GL_POSITION, LightPosition);
+  glLightfv(GL_LIGHT0, GL_AMBIENT, LightAmbient);
+  glLightfv(GL_LIGHT0, GL_DIFFUSE, LightDiffuse);
+  glLightfv(GL_LIGHT0, GL_SPECULAR,LightSpecular);
+}
+
 void GLWin::paintGL()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    paintMdl();
     glTranslatef(xTra, yTra, zTra);
-    glRotatef(iRot, 0.0, 1.0, 0.0);
+    glRotatef(iRot, 1.0, 0.0, 0.0);
+    glRotatef(m_xRot, 1.0, 0.0, 0.0);
+    glRotatef(m_yRot, 0.0, 1.0, 0.0);
+    glRotatef(m_zRot, 0.0, 0.0, 1.0);
+    glScalef(scale, scale, scale);
+    lights();
     glCallList(idx);
 }
 
@@ -124,6 +157,7 @@ void GLWin::keyPressEvent(QKeyEvent *ke)
             glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
         }
         break;
+//        GLuint image = loadBMP_custom("./my_texture.bmp");
     case Qt::Key_Comma:
         zTra=zTra-0.2;
         break;
@@ -177,3 +211,98 @@ void GLWin::paintModelFromFile(const QString filePath) {
     idx = paintMdl();
 }
 
+void GLWin::wheelEvent(QWheelEvent *event)
+{
+    scale *= 1 + event->delta() * (s0 - 1);
+    update();
+}
+
+void GLWin::setXRotation(int xAngle) {
+    m_xRot = static_cast<float>(xAngle);
+    update();
+}
+
+void GLWin::setYRotation(int yAngle)
+{
+    m_yRot = static_cast<float>(yAngle);
+    update();
+}
+
+void GLWin::setZRotation(int zAngle)
+{
+    m_zRot = static_cast<float>(zAngle);
+    update();
+}
+
+void GLWin::setLightIntensity(int intensity) {
+    qDebug() << "setLightIntensity" << intensity;
+    LightPosition[3] = static_cast<float>(intensity);
+    update();
+}
+
+void GLWin::setLightXPosition(int xPosition) {
+    qDebug() << "setLightXPosition" << xPosition;
+    LightPosition[0] = static_cast<float>(xPosition);
+    update();
+}
+
+void GLWin::setAmbientLightR(double value)
+{
+    LightAmbient[0] = static_cast<float>(value); // R
+}
+
+void GLWin::setAmbientLightG(double value)
+{
+    LightAmbient[1] = static_cast<float>(value); // G
+}
+void GLWin::setAmbientLightB(double value)
+{
+    LightAmbient[2] = static_cast<float>(value); // B
+
+}
+
+void GLWin::setDiffuseLightR(double value)
+{
+    LightDiffuse[0] = static_cast<float>(value); // R
+}
+
+void GLWin::setDiffuseLightG(double value)
+{
+    LightDiffuse[1] = static_cast<float>(value); // G
+}
+void GLWin::setDiffuseLightB(double value)
+{
+    LightDiffuse[2] = static_cast<float>(value); // B
+
+}
+
+void GLWin::setSpecularLightR(double value)
+{
+    LightSpecular[0] = static_cast<float>(value); // R
+}
+
+void GLWin::setSpecularLightG(double value)
+{
+    LightSpecular[1] = static_cast<float>(value); // G
+}
+void GLWin::setSpecularLightB(double value)
+{
+    LightSpecular[2] = static_cast<float>(value); // B
+
+}
+void GLWin::setLightYPosition(int yPosition) {
+    qDebug() << "setLightYPosition" << yPosition;
+    LightPosition[1] = static_cast<float>(yPosition);
+    update();
+}
+void GLWin::setLightZPosition(int zPosition) {
+    qDebug() << "setLightZPosition" << zPosition;
+    LightPosition[2] = static_cast<float>(zPosition);
+    update();
+}
+
+void GLWin::setScale(double scaleFactor) {
+    float scaleFloat = static_cast<float>(scaleFactor);
+    glScalef(scaleFloat, scaleFloat, scaleFloat);
+    update();
+}

@@ -7,6 +7,7 @@
 QT       += core gui opengl
 TARGET = gl_graph
 TEMPLATE = app
+CONFIG += c++14
 
 
 SOURCES += main.cpp\
