@@ -22,5 +22,8 @@ HEADERS  += glwin.h \
 RESOURCES += \
     resources.qrc
 
+#LIBS += -lGLU
+
 FORMS += \
     mainwindow.ui
+

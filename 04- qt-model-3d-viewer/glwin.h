@@ -10,6 +10,14 @@
 #include <vector>
 #include  "modelobj.h"
 
+typedef struct
+{
+    GLfloat posX,posY,posZ;
+    GLfloat rotX,rotY,rotZ;
+    QPoint  lastPos;
+}
+Camera_t;
+
 class GLWin : public QGLWidget
 {
     Q_OBJECT
@@ -21,10 +29,11 @@ public:
     void paintModelFromFile(const QString filePath);
 
 public slots:
+    void setDirectionalLightMode(const bool isDirectional);
     void setXRotation(int xAngle);
     void setYRotation(int yAngle);
     void setZRotation(int zAngle);
-    void setScale(double scaleFactor);
+    void setScale(int scaleFactor);
     void setLightIntensity(int intensity);
     void setLightZPosition(int zPosition);
     void setLightYPosition(int yPosition);
@@ -38,6 +47,17 @@ public slots:
     void setSpecularLightR(double value);
     void setSpecularLightG(double value);
     void setSpecularLightB(double value);
+
+    void setCameraXPosition(int xPosition);
+    void setCameraYPosition(int yPosition);
+    void setCameraZPosition(int zPosition);
+
+    void setModelXPosition(int xPosition);
+    void setModelYPosition(int yPosition);
+    void setModelZPosition(int zPosition);
+private:
+    void drawFloorGrid(float size, float step);
+    void drawAxis(GLfloat axisLength);
 
 private slots:
     void wheelEvent(QWheelEvent *event) override;
@@ -63,9 +83,16 @@ private:
     GLfloat LightDiffuse[4];
     GLfloat LightSpecular[4];
     GLfloat LightPosition[4];
+    GLfloat CameraPosition[3];
+    GLfloat m_lightIntensity;
+    bool m_isDirectionalLight;
     bool wireFrameMode;
     float scale, s0;
     void lights();
+    GLuint m_gridLenght;
+    GLuint vao;
+    Camera_t m_camera;
+    void setFrustum(GLdouble fovY, GLdouble aspect, GLdouble zNear, GLdouble zFar);
 };
 
 #endif // GLWIN_H

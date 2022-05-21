@@ -7,14 +7,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     connect(ui->btnLoadModel, &QPushButton::released, this, &MainWindow::onBtnLoadModelClicked);
-//    connect(ui->xAngleSlider, &QSlider::valueChanged ,[this](int value){
-//        ui->xLabel->setText(QString("X Rotation value:") + QString::number(value));
-//        ui->openGLWidget->setXRotation(value);
-//    });
     connect(ui->xAngleSlider, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setXRotation);
     connect(ui->yAngleSlider, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setYRotation);
     connect(ui->zAngleSlider, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setZRotation);
-    connect(ui->sb_scale, qOverload<double>(&QDoubleSpinBox::valueChanged), ui->openGLWidget, &GLWin::setScale);
     connect(ui->lightIntensitySlider, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setLightIntensity);
     connect(ui->lightXpositionSlider, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setLightXPosition);
     connect(ui->lightYpositionSlider, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setLightYPosition);
@@ -28,6 +23,23 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->slSpecularR, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setSpecularLightR);
     connect(ui->slSpecularG, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setSpecularLightG);
     connect(ui->slSpecularB, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setSpecularLightB);
+    connect(ui->scaleSlider, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setScale);
+    connect(ui->cameraXSlider, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setCameraXPosition);
+    connect(ui->cameraYSlider, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setCameraYPosition);
+    connect(ui->cameraZSlider, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setCameraZPosition);
+    connect(ui->cbDirectionalLight, &QCheckBox::toggled,ui->openGLWidget,&GLWin::setDirectionalLightMode);
+    connect(ui->xPosSlider, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setModelXPosition);
+    connect(ui->yPosSlider, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setModelYPosition);
+    connect(ui->zPosSlider, &QSlider::valueChanged, ui->openGLWidget, &GLWin::setModelZPosition);
+    //    connect(ui->openGLWidget, &QSlider::xRotationChanged ,[this](double value){
+    //        ui->xLabel->setText(QString("X Rotation value:") + QString::number(value));
+    //    });
+    //    connect(ui->openGLWidget, &QSlider::yRotationChanged ,[this](double value){
+    //        ui->yLabel->setText(QString("X Rotation value:") + QString::number(value));
+    //    });
+    //    connect(ui->openGLWidget, &QSlider::zRotationChanged ,[this](double value){
+    //        ui->zLabel->setText(QString("X Rotation value:") + QString::number(value));
+    //    });
 
 }
 
