@@ -17,9 +17,14 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    void initModelControls();
+    void initLights();
 public slots:
     void keyPressEvent(QKeyEvent *ke);
     void onBtnLoadModelClicked();
+private slots:
+    void hideControls();
+    void updateTabContent();
 };
 
 #endif // MAINWINDOW_H

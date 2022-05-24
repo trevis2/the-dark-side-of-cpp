@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>711</height>
+    <width>774</width>
+    <height>506</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,18 +20,8 @@
    <enum>QTabWidget::Triangular</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="GLWin" name="openGLWidget">
-      <property name="minimumSize">
-       <size>
-        <width>500</width>
-        <height>400</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="2">
      <widget class="QTabWidget" name="tabWidget">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
@@ -46,7 +36,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="modelTab">
        <attribute name="title">
@@ -68,7 +58,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="xAngleSlider">
+         <widget class="CustomSlider" name="xAngleSlider">
           <property name="minimum">
            <number>-90</number>
           </property>
@@ -77,6 +67,9 @@
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
           </property>
          </widget>
         </item>
@@ -88,7 +81,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="yAngleSlider">
+         <widget class="CustomSlider" name="yAngleSlider">
           <property name="minimum">
            <number>-90</number>
           </property>
@@ -97,6 +90,9 @@
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
           </property>
          </widget>
         </item>
@@ -108,7 +104,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="zAngleSlider">
+         <widget class="CustomSlider" name="zAngleSlider">
           <property name="minimum">
            <number>-90</number>
           </property>
@@ -118,17 +114,20 @@
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_14">
+         <widget class="QLabel" name="scaleLabel">
           <property name="text">
            <string>Scale</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="scaleSlider">
+         <widget class="CustomSlider" name="scaleSlider">
           <property name="maximum">
            <number>20</number>
           </property>
@@ -144,17 +143,20 @@
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_15">
+         <widget class="QLabel" name="xPositionLabel">
           <property name="text">
            <string>X Position</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="xPosSlider">
+         <widget class="CustomSlider" name="xPosSlider">
           <property name="minimum">
            <number>-100</number>
           </property>
@@ -164,17 +166,20 @@
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_16">
+         <widget class="QLabel" name="yPositionLabel">
           <property name="text">
            <string>Y Position</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="yPosSlider">
+         <widget class="CustomSlider" name="yPosSlider">
           <property name="minimum">
            <number>-100</number>
           </property>
@@ -184,17 +189,20 @@
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_17">
+         <widget class="QLabel" name="zPositionLabel">
           <property name="text">
            <string>Z Position</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="zPosSlider">
+         <widget class="CustomSlider" name="zPosSlider">
           <property name="minimum">
            <number>-100</number>
           </property>
@@ -203,6 +211,9 @@
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
           </property>
          </widget>
         </item>
@@ -221,7 +232,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="cameraXSlider">
+         <widget class="CustomSlider" name="cameraXSlider">
           <property name="minimum">
            <number>-100</number>
           </property>
@@ -230,6 +241,9 @@
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
           </property>
          </widget>
         </item>
@@ -241,7 +255,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="cameraYSlider">
+         <widget class="CustomSlider" name="cameraYSlider">
           <property name="minimum">
            <number>-100</number>
           </property>
@@ -250,6 +264,9 @@
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
           </property>
          </widget>
         </item>
@@ -261,7 +278,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="cameraZSlider">
+         <widget class="CustomSlider" name="cameraZSlider">
           <property name="minimum">
            <number>-100</number>
           </property>
@@ -270,6 +287,9 @@
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
           </property>
          </widget>
         </item>
@@ -295,18 +315,24 @@
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="lightIntensitySlider">
+         <widget class="CustomSlider" name="lightIntensitySlider">
           <property name="minimum">
            <number>1</number>
           </property>
           <property name="maximum">
            <number>10</number>
           </property>
+          <property name="pageStep">
+           <number>1</number>
+          </property>
           <property name="value">
            <number>1</number>
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
           </property>
          </widget>
         </item>
@@ -318,9 +344,12 @@
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="lightXpositionSlider">
+         <widget class="CustomSlider" name="lightXpositionSlider">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
           </property>
          </widget>
         </item>
@@ -332,9 +361,12 @@
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="lightYpositionSlider">
+         <widget class="CustomSlider" name="lightYpositionSlider">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
           </property>
          </widget>
         </item>
@@ -346,7 +378,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="lightZPositionSlider">
+         <widget class="CustomSlider" name="lightZPositionSlider">
           <property name="minimum">
            <number>-100</number>
           </property>
@@ -359,12 +391,15 @@
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
+          </property>
          </widget>
         </item>
         <item>
          <widget class="QTabWidget" name="LightsTabWidget">
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="tab_4">
            <attribute name="title">
@@ -379,7 +414,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QSlider" name="slAmbientR">
+             <widget class="CustomSlider" name="slAmbientR">
               <property name="maximum">
                <number>255</number>
               </property>
@@ -388,6 +423,9 @@
               </property>
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="tickPosition">
+               <enum>QSlider::TicksAbove</enum>
               </property>
              </widget>
             </item>
@@ -399,7 +437,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QSlider" name="slAmbientG">
+             <widget class="CustomSlider" name="slAmbientG">
               <property name="maximum">
                <number>255</number>
               </property>
@@ -408,6 +446,9 @@
               </property>
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="tickPosition">
+               <enum>QSlider::TicksAbove</enum>
               </property>
              </widget>
             </item>
@@ -419,7 +460,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QSlider" name="slAmbientB">
+             <widget class="CustomSlider" name="slAmbientB">
               <property name="maximum">
                <number>255</number>
               </property>
@@ -428,6 +469,9 @@
               </property>
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="tickPosition">
+               <enum>QSlider::TicksAbove</enum>
               </property>
              </widget>
             </item>
@@ -446,7 +490,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QSlider" name="slDiffuseR">
+             <widget class="CustomSlider" name="slDiffuseR">
               <property name="maximum">
                <number>255</number>
               </property>
@@ -455,6 +499,9 @@
               </property>
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="tickPosition">
+               <enum>QSlider::TicksAbove</enum>
               </property>
              </widget>
             </item>
@@ -466,7 +513,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QSlider" name="slDiffuseB">
+             <widget class="CustomSlider" name="slDiffuseB">
               <property name="maximum">
                <number>255</number>
               </property>
@@ -475,6 +522,9 @@
               </property>
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="tickPosition">
+               <enum>QSlider::TicksAbove</enum>
               </property>
              </widget>
             </item>
@@ -486,7 +536,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QSlider" name="slDiffuseG">
+             <widget class="CustomSlider" name="slDiffuseG">
               <property name="maximum">
                <number>255</number>
               </property>
@@ -495,6 +545,9 @@
               </property>
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="tickPosition">
+               <enum>QSlider::TicksAbove</enum>
               </property>
              </widget>
             </item>
@@ -513,7 +566,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QSlider" name="slSpecularR">
+             <widget class="CustomSlider" name="slSpecularR">
               <property name="maximum">
                <number>255</number>
               </property>
@@ -526,6 +579,9 @@
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
+              <property name="tickPosition">
+               <enum>QSlider::TicksAbove</enum>
+              </property>
              </widget>
             </item>
             <item>
@@ -536,7 +592,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QSlider" name="slSpecularG">
+             <widget class="CustomSlider" name="slSpecularG">
               <property name="maximum">
                <number>255</number>
               </property>
@@ -545,6 +601,9 @@
               </property>
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="tickPosition">
+               <enum>QSlider::TicksAbove</enum>
               </property>
              </widget>
             </item>
@@ -556,7 +615,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QSlider" name="slSpecularB">
+             <widget class="CustomSlider" name="slSpecularB">
               <property name="maximum">
                <number>255</number>
               </property>
@@ -565,6 +624,9 @@
               </property>
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="tickPosition">
+               <enum>QSlider::TicksAbove</enum>
               </property>
              </widget>
             </item>
@@ -576,6 +638,16 @@
       </widget>
      </widget>
     </item>
+    <item row="0" column="0">
+     <widget class="OpenGLView" name="openGLWidget">
+      <property name="minimumSize">
+       <size>
+        <width>500</width>
+        <height>400</height>
+       </size>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -583,20 +655,68 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>774</width>
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <addaction name="actionHide_controls"/>
+   </widget>
+   <addaction name="menuOptions"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionHide_controls">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Hide controls</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>GLWin</class>
+   <class>OpenGLView</class>
    <extends>QOpenGLWidget</extends>
-   <header location="global">glwin.h</header>
+   <header location="global">openglview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CustomSlider</class>
+   <extends>QSlider</extends>
+   <header location="global">CustomSlider.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>btnLoadModel</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>yAngleSlider</tabstop>
+  <tabstop>zAngleSlider</tabstop>
+  <tabstop>scaleSlider</tabstop>
+  <tabstop>xPosSlider</tabstop>
+  <tabstop>yPosSlider</tabstop>
+  <tabstop>zPosSlider</tabstop>
+  <tabstop>cameraXSlider</tabstop>
+  <tabstop>cameraYSlider</tabstop>
+  <tabstop>cameraZSlider</tabstop>
+  <tabstop>cbDirectionalLight</tabstop>
+  <tabstop>lightIntensitySlider</tabstop>
+  <tabstop>lightXpositionSlider</tabstop>
+  <tabstop>lightYpositionSlider</tabstop>
+  <tabstop>lightZPositionSlider</tabstop>
+  <tabstop>LightsTabWidget</tabstop>
+  <tabstop>slAmbientR</tabstop>
+  <tabstop>slAmbientG</tabstop>
+  <tabstop>slAmbientB</tabstop>
+  <tabstop>slDiffuseR</tabstop>
+  <tabstop>slDiffuseB</tabstop>
+  <tabstop>slDiffuseG</tabstop>
+  <tabstop>slSpecularR</tabstop>
+  <tabstop>slSpecularG</tabstop>
+  <tabstop>slSpecularB</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
