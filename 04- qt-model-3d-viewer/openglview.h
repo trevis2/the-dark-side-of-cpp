@@ -7,8 +7,7 @@
 #include <QTimer>
 #include <math.h>
 #include <vector>
-#include  "modelobj.h"
-#include  "modelstl.h"
+#include "BaseModel.h"
 
 typedef struct
 {
@@ -255,8 +254,7 @@ private:
 
 private:
     GLuint paintMdl();/** **/
-    ModelObj *model;/** **/
-    ModelStl *modelStl;/** **/
+    BaseModel *model;/** **/
     vtxArray vtxArr;/** **/
     QTimer *timer;/** **/
     ushort iRot;/** **/

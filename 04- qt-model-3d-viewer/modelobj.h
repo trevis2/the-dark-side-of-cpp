@@ -4,20 +4,16 @@
 #include <QFile>
 #include "BaseModel.h"
 
-class ModelObj
+class ModelObj : public BaseModel
 {
 public:
     ModelObj();
     ~ModelObj();
     void updateModelSourceFile(QString file);
     void LoadMdl();//Load model file
-    vtxArray GetVertices();//Get model vertices
-    faceArray GetFaces();//Get model faces
+
 private:
     int * vertices;
-    QFile* objFile;
-    vtxArray vtxArr;
-    faceArray fArr;
     void ParseVertexData(QByteArray line);
     void ParseFacesData(QByteArray line);
 };

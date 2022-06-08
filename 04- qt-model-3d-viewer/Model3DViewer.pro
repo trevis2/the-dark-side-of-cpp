@@ -16,6 +16,7 @@ macx {
 
 
 SOURCES += main.cpp\
+    BaseModel.cpp \
     modelstl.cpp \
         openglview.cpp \
     mainwindow.cpp \

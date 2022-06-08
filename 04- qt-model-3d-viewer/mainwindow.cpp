@@ -99,7 +99,7 @@ void MainWindow::keyPressEvent(QKeyEvent *ke) {
 
 void MainWindow::onBtnLoadModelClicked() {
     qDebug() << Q_FUNC_INFO;
-    QString filePath = QFileDialog::getOpenFileName(this, "Load ASCII .stl model", QString(), "STL Files (*.stl)");
+    QString filePath = QFileDialog::getOpenFileName(this, "3D Model Files", QString(), "Model Files (*.stl *.obj)");
     if( QFile(filePath).exists() == true ) {
         ui->openGLWidget->paintModelFromFile(filePath);
     }

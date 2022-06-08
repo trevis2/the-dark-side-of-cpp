@@ -5,6 +5,9 @@
 #include <OpenGL/glu.h>
 #endif
 
+#include  "modelobj.h"
+#include  "modelstl.h"
+
 OpenGLView::OpenGLView(QWidget *parent)
     : QGLWidget(parent)
 {
@@ -54,13 +57,9 @@ OpenGLView::OpenGLView(QWidget *parent)
 
     resize(500,500);//window size
     model = nullptr;
-//    model = new ModelObj();
-    modelStl = new ModelStl();
-//    model->updateModelSourceFile(QString(":/Models/Patrick.obj"));
-//    modelStl->updateModelSourceFile(QString(":/Models/Darth.stl"));
-//    modelStl->updateModelSourceFile(QString(":/Models/cube.stl"));
-    modelStl->updateModelSourceFile(QString(":/Models/holecube.stl"));
-//    modelStl->updateModelSourceFile(QString(":/Models/eyeball.stl"));
+    model = new ModelObj();
+    model->updateModelSourceFile(QString(":/Models/Patrick.obj"));
+
     idx = 0;
 
     timer = new QTimer(this);
@@ -280,7 +279,9 @@ GLuint OpenGLView::paintMdl()
     faceArray faces;
     uint facesNum;
     vtxArray vertices;
-    if (model != nullptr) {
+    ModelObj* modelObj = dynamic_cast<ModelObj*>(model);
+    ModelStl* modelStl = dynamic_cast<ModelStl*>(model);
+    if (modelObj != nullptr) {
         faces = model->GetFaces();
         facesNum = faces.size();
         vertices = model->GetVertices();
@@ -318,6 +319,11 @@ GLuint OpenGLView::paintMdl()
 }
 
 void OpenGLView::paintModelFromFile(const QString filePath) {
+    if (filePath.contains(".stl")) {
+        model = new ModelStl();
+    } else if(filePath.contains(".obj")) {
+        model = new ModelObj();
+    }
     model->updateModelSourceFile(filePath);
     idx = paintMdl();
 }

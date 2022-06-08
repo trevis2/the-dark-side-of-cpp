@@ -4,22 +4,16 @@
 #include <QFile>
 #include "BaseModel.h"
 
-class ModelStl
+class ModelStl: public BaseModel
 {
 public:
     ModelStl();
     ~ModelStl();
     void updateModelSourceFile(QString file);
     void LoadMdl();//Load model file
-    vtxArray GetVertices();//Get model vertices
-    vtxArray GetNormals();//Get model vertices
-    faceArray GetFaces();//Get model faces
+
 private:
     int * vertices;
-    QFile* stlFile;
-    vtxArray vtxArr;
-    vtxArray normalsArr;
-    faceArray fArr;
 
  private:
     void readBinary();

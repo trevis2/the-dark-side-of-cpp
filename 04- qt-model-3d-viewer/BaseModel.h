@@ -22,4 +22,19 @@ struct face {
 typedef std::vector<vertex> vtxArray;
 typedef std::vector<face> faceArray;
 
+class BaseModel {
+public:
+    BaseModel();
+    ~BaseModel();
+    void updateModelSourceFile(QString file);
+    virtual void LoadMdl();
+    vtxArray GetVertices();
+    faceArray GetFaces();
+    vtxArray GetNormals();
+  protected:
+    QFile* modelFile;
+    vtxArray vtxArr;
+    vtxArray normalsArr;
+    faceArray fArr;
+};
 #endif // BASEMODEL_H
