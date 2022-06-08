@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>774</width>
-    <height>506</height>
+    <height>519</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,7 +36,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="modelTab">
        <attribute name="title">
@@ -317,10 +317,10 @@
         <item>
          <widget class="CustomSlider" name="lightIntensitySlider">
           <property name="minimum">
-           <number>1</number>
+           <number>0</number>
           </property>
           <property name="maximum">
-           <number>10</number>
+           <number>255</number>
           </property>
           <property name="pageStep">
            <number>1</number>

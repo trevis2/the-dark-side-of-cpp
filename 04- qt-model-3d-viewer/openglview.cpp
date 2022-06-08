@@ -53,8 +53,14 @@ OpenGLView::OpenGLView(QWidget *parent)
     m_camera.posZ=-7.0;
 
     resize(500,500);//window size
-    model = new ModelObj();
-    model->updateModelSourceFile(QString(":/Models/Patrick.obj"));
+    model = nullptr;
+//    model = new ModelObj();
+    modelStl = new ModelStl();
+//    model->updateModelSourceFile(QString(":/Models/Patrick.obj"));
+//    modelStl->updateModelSourceFile(QString(":/Models/Darth.stl"));
+//    modelStl->updateModelSourceFile(QString(":/Models/cube.stl"));
+    modelStl->updateModelSourceFile(QString(":/Models/holecube.stl"));
+//    modelStl->updateModelSourceFile(QString(":/Models/eyeball.stl"));
     idx = 0;
 
     timer = new QTimer(this);
@@ -271,20 +277,39 @@ GLuint OpenGLView::paintMdl()
     glNewList(list, GL_COMPILE);
     qglColor(Qt::gray);
     glBegin(GL_TRIANGLES);
-    faceArray faces = model->GetFaces();
-    uint facesNum = faces.size();
-    vtxArray vetices = model->GetVertices();
-
-    for(uint i=0;i<facesNum;i++) {
-        face curFace = faces.at(i);
-        vertex v1 = vetices.at((curFace.x-1));
-        vertex v2 = vetices.at((curFace.y-1));
-        vertex v3 = vetices.at((curFace.z-1));
-        //calculating normal
-        glNormal3f(((v2.y-v1.y)*(v3.z-v1.z))-((v3.y-v1.y)*(v2.z-v1.z)), ((v2.x-v1.x)*(v3.z-v1.z))-((v3.x-v1.x)*(v2.z-v1.z)), ((v2.x-v1.x)*(v3.y-v1.y))-((v3.x-v1.x)*(v2.y-v1.y)));
-        glVertex3f(v1.x, v1.y, v1.z);
-        glVertex3f(v2.x, v2.y, v2.z);
-        glVertex3f(v3.x, v3.y, v3.z);
+    faceArray faces;
+    uint facesNum;
+    vtxArray vertices;
+    if (model != nullptr) {
+        faces = model->GetFaces();
+        facesNum = faces.size();
+        vertices = model->GetVertices();
+        for(uint i=0;i<facesNum;i++) {
+            face curFace = faces.at(i);
+            vertex v1 = vertices.at((curFace.x-1));
+            vertex v2 = vertices.at((curFace.y-1));
+            vertex v3 = vertices.at((curFace.z-1));
+            //calculating normal
+            glNormal3f(((v2.y-v1.y)*(v3.z-v1.z))-((v3.y-v1.y)*(v2.z-v1.z)), ((v2.x-v1.x)*(v3.z-v1.z))-((v3.x-v1.x)*(v2.z-v1.z)), ((v2.x-v1.x)*(v3.y-v1.y))-((v3.x-v1.x)*(v2.y-v1.y)));
+            glVertex3f(v1.x, v1.y, v1.z);
+            glVertex3f(v2.x, v2.y, v2.z);
+            glVertex3f(v3.x, v3.y, v3.z);
+        }
+    } else if (modelStl != nullptr) {
+        faces = modelStl->GetFaces();
+        facesNum = faces.size();
+        vertices = modelStl->GetVertices();
+        vtxArray normals = modelStl->GetNormals();
+        for(uint i=0;i < facesNum;i++) {
+            face curFace = faces.at(i);
+            vertex v1 = vertices.at((curFace.x-1));
+            vertex v2 = vertices.at((curFace.y-1));
+            vertex v3 = vertices.at((curFace.z-1));
+            glNormal3f(normals.at(i).x, normals.at(i).y, normals.at(i).z);
+            glVertex3f(v1.x, v1.y, v1.z);
+            glVertex3f(v2.x, v2.y, v2.z);
+            glVertex3f(v3.x, v3.y, v3.z);
+        }
     }
 
     glEnd();
@@ -327,10 +352,10 @@ void OpenGLView::setZRotation(int zAngle)
 }
 
 void OpenGLView::setLightIntensity(int intensity) {
-//    m_lightIntensity = static_cast<float>(intensity);
-//    LightDiffuse[0] = m_lightIntensity * LightDiffuse[0];
-//    LightDiffuse[1] = m_lightIntensity * LightDiffuse[1];
-//    LightDiffuse[2] = m_lightIntensity * LightDiffuse[2];
+    m_lightIntensity = static_cast<float>(intensity);
+    LightDiffuse[0] = m_lightIntensity *  m_lastDiffuseR;
+    LightDiffuse[1] = m_lightIntensity *  m_lastDiffuseG;
+    LightDiffuse[2] = m_lightIntensity *  m_lastDiffuseB;
     update();
 }
 
@@ -353,18 +378,23 @@ void OpenGLView::setAmbientLightB(double value)
 
 void OpenGLView::setDiffuseLightR(double value)
 {
-    LightDiffuse[0] = m_lightIntensity * static_cast<float>(value/255.0f); // R
+    m_lastDiffuseR = static_cast<float>(value/255.0f); // R
+    LightDiffuse[0] = m_lightIntensity *  m_lastDiffuseR;
     update();
 }
 
 void OpenGLView::setDiffuseLightG(double value)
 {
-    LightDiffuse[1] = m_lightIntensity * static_cast<float>(value/255.0f); // G
+    m_lastDiffuseG = static_cast<float>(value/255.0f); // G
+    LightDiffuse[1] = m_lightIntensity *  m_lastDiffuseG;
+
     update();
 }
 void OpenGLView::setDiffuseLightB(double value)
 {
-    LightDiffuse[2] = m_lightIntensity * static_cast<float>(value/255.0f); // B
+    m_lastDiffuseB = static_cast<float>(value/255.0f); // B
+    LightDiffuse[2] = m_lightIntensity *  m_lastDiffuseB;
+
     update();
 }
 

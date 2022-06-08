@@ -16,14 +16,17 @@ macx {
 
 
 SOURCES += main.cpp\
+    modelstl.cpp \
         openglview.cpp \
     mainwindow.cpp \
     modelobj.cpp
 
 HEADERS  += openglview.h \
+    BaseModel.h \
     CustomSlider.h \
     mainwindow.h \
-    modelobj.h
+    modelobj.h \
+    modelstl.h
 
 RESOURCES += \
     resources.qrc
