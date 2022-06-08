@@ -1,7 +1,6 @@
 #include "modelstl.h"
 #include <QDebug>
 
-// Just set numeric locale to C standart
 ModelStl::ModelStl() : BaseModel()
 {
 

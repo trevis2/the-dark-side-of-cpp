@@ -10,7 +10,8 @@ BaseModel::BaseModel()
 
 BaseModel::~BaseModel()
 {
-    modelFile->close();
+    if(modelFile != nullptr && modelFile->isOpen())
+        modelFile->close();
 }
 
 void BaseModel::updateModelSourceFile(QString file)

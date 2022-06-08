@@ -8,16 +8,29 @@ class ModelStl: public BaseModel
 {
 public:
     ModelStl();
-    ~ModelStl();
-    void updateModelSourceFile(QString file);
-    void LoadMdl();//Load model file
 
-private:
-    int * vertices;
+    /**
+     * @see  BaseModel::LoadMdl
+     */
+    void LoadMdl() override; //Load model file
 
  private:
+
+    /**
+     * @details This method parses stl binary file.
+     */
     void readBinary();
+
+    /**
+     * @details This method parses stl textual file.
+     */
     void readText();
+
+    /**
+     * @details This method parses input textual line in order to extract vertex coordinates data
+     * @param IN::line Input 3d model file text line.
+     * @return Vertex data.
+     */
     vertex coordinateFromString(const QString &line);
 };
 #endif // MODELSTL_H

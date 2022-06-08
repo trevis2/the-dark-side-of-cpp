@@ -11,7 +11,6 @@
 OpenGLView::OpenGLView(QWidget *parent)
     : QGLWidget(parent)
 {
-    m_intVal = 0;
     wireFrameMode = false;
     scale = 1.0f;
     s0 = 1.001f;
@@ -256,13 +255,13 @@ void OpenGLView::keyPressEvent(QKeyEvent *ke)
         zTra=zTra+0.2;
         break;
     case Qt::Key_M:{
-        model->updateModelSourceFile(QString(":/Models/suzanne.obj"));
+        paintModelFromFile(QString(":/Models/suzanne.obj"));
         idx = paintMdl();
         break;
         }
     case Qt::Key_P:{
         // Turn on wireframe mode
-        model->updateModelSourceFile(QString(":/Models/Patrick.obj"));
+        paintModelFromFile(QString(":/Models/Patrick.obj"));
         idx = paintMdl();
         break;
         }
@@ -320,12 +319,18 @@ GLuint OpenGLView::paintMdl()
 
 void OpenGLView::paintModelFromFile(const QString filePath) {
     if (filePath.contains(".stl")) {
+        delete model;
+        model = nullptr;
         model = new ModelStl();
     } else if(filePath.contains(".obj")) {
+        delete model;
+        model = nullptr;
         model = new ModelObj();
     }
-    model->updateModelSourceFile(filePath);
-    idx = paintMdl();
+    if(model != nullptr) {
+        model->updateModelSourceFile(filePath);
+        idx = paintMdl();
+    }
 }
 
 void OpenGLView::wheelEvent(QWheelEvent *event)

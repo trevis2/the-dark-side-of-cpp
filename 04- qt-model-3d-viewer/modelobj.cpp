@@ -1,5 +1,5 @@
 #include "modelobj.h"
-// Just set numeric locale to C standart
+
 ModelObj::ModelObj(): BaseModel()
 {
 
