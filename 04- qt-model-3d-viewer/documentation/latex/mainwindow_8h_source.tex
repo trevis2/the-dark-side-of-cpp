@@ -1,0 +1,40 @@
+\hypertarget{mainwindow_8h_source}{}\doxysection{mainwindow.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MAINWINDOW\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MAINWINDOW\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QMainWindow>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }Ui \{}
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_main_window}{MainWindow}};}
+\DoxyCodeLine{8 \}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_main_window}{MainWindow}} : \textcolor{keyword}{public} QMainWindow}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     Q\_OBJECT}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{15     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_main_window}{MainWindow}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_main_window}{\string~MainWindow}}();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{private}:}
+\DoxyCodeLine{19     Ui::MainWindow *ui;}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} initModelControls();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} initLights();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a62849a19bf76183595d0f23f1dd4df59}{keyPressEvent}}(QKeyEvent *ke);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a5d7283eada47c6c52ba9c60ac02d5467}{onBtnLoadModelClicked}}();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} hideControls();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} updateTabContent();}
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MAINWINDOW\_H}}
+
+\end{DoxyCode}

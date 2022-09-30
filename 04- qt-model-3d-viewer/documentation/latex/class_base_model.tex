@@ -1,0 +1,111 @@
+\hypertarget{class_base_model}{}\doxysection{Base\+Model Class Reference}
+\label{class_base_model}\index{BaseModel@{BaseModel}}
+Inheritance diagram for Base\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_base_model}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_base_model_a5ec5a1dd45d9203bf11b30ab1b8bacc2}{update\+Model\+Source\+File}} (QString file)
+\item 
+virtual void \mbox{\hyperlink{class_base_model_a96e9f48b875eb23197aec3a13b223142}{Load\+Mdl}} ()
+\item 
+vtx\+Array \mbox{\hyperlink{class_base_model_a980688e1527fb61b0141373cd2076396}{Get\+Vertices}} ()
+\item 
+face\+Array \mbox{\hyperlink{class_base_model_a0ea988404c6c2bf0d71527e627a9e5a8}{Get\+Faces}} ()
+\item 
+vtx\+Array \mbox{\hyperlink{class_base_model_a4de86f6edfe7d6398228c929eeccc722}{Get\+Normals}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_base_model_a88a484afacb6a2955f6b50c26a77617a}\label{class_base_model_a88a484afacb6a2955f6b50c26a77617a}} 
+QFile $\ast$ {\bfseries model\+File}
+\item 
+vtx\+Array \mbox{\hyperlink{class_base_model_acf8c4c09385d9592f641cc3290a4b7d5}{vtx\+Arr}}
+\item 
+vtx\+Array \mbox{\hyperlink{class_base_model_a059e350547042f352f7c978f74e13e8a}{normals\+Arr}}
+\item 
+face\+Array \mbox{\hyperlink{class_base_model_af21ab43f9d3e7450cebb4e7a234f8933}{f\+Arr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_base_model_a0ea988404c6c2bf0d71527e627a9e5a8}\label{class_base_model_a0ea988404c6c2bf0d71527e627a9e5a8}} 
+\index{BaseModel@{BaseModel}!GetFaces@{GetFaces}}
+\index{GetFaces@{GetFaces}!BaseModel@{BaseModel}}
+\doxysubsubsection{\texorpdfstring{GetFaces()}{GetFaces()}}
+{\footnotesize\ttfamily face\+Array Base\+Model\+::\+Get\+Faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This Method returns the list of faces. \begin{DoxyReturn}{Returns}
+Array of model triangle faces. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_base_model_a4de86f6edfe7d6398228c929eeccc722}\label{class_base_model_a4de86f6edfe7d6398228c929eeccc722}} 
+\index{BaseModel@{BaseModel}!GetNormals@{GetNormals}}
+\index{GetNormals@{GetNormals}!BaseModel@{BaseModel}}
+\doxysubsubsection{\texorpdfstring{GetNormals()}{GetNormals()}}
+{\footnotesize\ttfamily vtx\+Array Base\+Model\+::\+Get\+Normals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This Method returns the list of normal vectors. \begin{DoxyReturn}{Returns}
+Array of normal vectors. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_base_model_a980688e1527fb61b0141373cd2076396}\label{class_base_model_a980688e1527fb61b0141373cd2076396}} 
+\index{BaseModel@{BaseModel}!GetVertices@{GetVertices}}
+\index{GetVertices@{GetVertices}!BaseModel@{BaseModel}}
+\doxysubsubsection{\texorpdfstring{GetVertices()}{GetVertices()}}
+{\footnotesize\ttfamily vtx\+Array Base\+Model\+::\+Get\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This Method returns the list of vertices. \begin{DoxyReturn}{Returns}
+Array of model triangle vertices. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_base_model_a96e9f48b875eb23197aec3a13b223142}\label{class_base_model_a96e9f48b875eb23197aec3a13b223142}} 
+\index{BaseModel@{BaseModel}!LoadMdl@{LoadMdl}}
+\index{LoadMdl@{LoadMdl}!BaseModel@{BaseModel}}
+\doxysubsubsection{\texorpdfstring{LoadMdl()}{LoadMdl()}}
+{\footnotesize\ttfamily void Base\+Model\+::\+Load\+Mdl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This method loads 3d model. 
+
+Reimplemented in \mbox{\hyperlink{class_model_obj_a66a8e01d3bd871fefce6ca13383b4e62}{Model\+Obj}}, and \mbox{\hyperlink{class_model_stl_abd995c688dd3a23dfe86e24b25bd2ff8}{Model\+Stl}}.
+
+\mbox{\Hypertarget{class_base_model_a5ec5a1dd45d9203bf11b30ab1b8bacc2}\label{class_base_model_a5ec5a1dd45d9203bf11b30ab1b8bacc2}} 
+\index{BaseModel@{BaseModel}!updateModelSourceFile@{updateModelSourceFile}}
+\index{updateModelSourceFile@{updateModelSourceFile}!BaseModel@{BaseModel}}
+\doxysubsubsection{\texorpdfstring{updateModelSourceFile()}{updateModelSourceFile()}}
+{\footnotesize\ttfamily void Base\+Model\+::update\+Model\+Source\+File (\begin{DoxyParamCaption}\item[{QString}]{file }\end{DoxyParamCaption})}
+
+This method updates 3d model file path. 
+\begin{DoxyParams}{Parameters}
+{\em IN\+::file} & 3d model file path \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_base_model_af21ab43f9d3e7450cebb4e7a234f8933}\label{class_base_model_af21ab43f9d3e7450cebb4e7a234f8933}} 
+\index{BaseModel@{BaseModel}!fArr@{fArr}}
+\index{fArr@{fArr}!BaseModel@{BaseModel}}
+\doxysubsubsection{\texorpdfstring{fArr}{fArr}}
+{\footnotesize\ttfamily face\+Array Base\+Model\+::f\+Arr\hspace{0.3cm}{\ttfamily [protected]}}
+
+Array of normal vectors \mbox{\Hypertarget{class_base_model_a059e350547042f352f7c978f74e13e8a}\label{class_base_model_a059e350547042f352f7c978f74e13e8a}} 
+\index{BaseModel@{BaseModel}!normalsArr@{normalsArr}}
+\index{normalsArr@{normalsArr}!BaseModel@{BaseModel}}
+\doxysubsubsection{\texorpdfstring{normalsArr}{normalsArr}}
+{\footnotesize\ttfamily vtx\+Array Base\+Model\+::normals\+Arr\hspace{0.3cm}{\ttfamily [protected]}}
+
+Array of vertices \mbox{\Hypertarget{class_base_model_acf8c4c09385d9592f641cc3290a4b7d5}\label{class_base_model_acf8c4c09385d9592f641cc3290a4b7d5}} 
+\index{BaseModel@{BaseModel}!vtxArr@{vtxArr}}
+\index{vtxArr@{vtxArr}!BaseModel@{BaseModel}}
+\doxysubsubsection{\texorpdfstring{vtxArr}{vtxArr}}
+{\footnotesize\ttfamily vtx\+Array Base\+Model\+::vtx\+Arr\hspace{0.3cm}{\ttfamily [protected]}}
+
+3D Model File 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Base\+Model.\+h\item 
+Base\+Model.\+cpp\end{DoxyCompactItemize}

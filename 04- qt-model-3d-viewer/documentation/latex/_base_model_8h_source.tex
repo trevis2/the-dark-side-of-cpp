@@ -1,0 +1,50 @@
+\hypertarget{_base_model_8h_source}{}\doxysection{Base\+Model.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef BASEMODEL\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define BASEMODEL\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QtCore>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{struct }\mbox{\hyperlink{structvertex}{vertex}} \{}
+\DoxyCodeLine{6     \textcolor{keywordtype}{float} x;}
+\DoxyCodeLine{7     \textcolor{keywordtype}{float} y;}
+\DoxyCodeLine{8     \textcolor{keywordtype}{float} z;}
+\DoxyCodeLine{9     \mbox{\hyperlink{structvertex}{vertex}}() \{ \}}
+\DoxyCodeLine{10     \mbox{\hyperlink{structvertex}{vertex}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} xCord,\textcolor{keyword}{const} \textcolor{keywordtype}{float} yCord,\textcolor{keyword}{const} \textcolor{keywordtype}{float} zCord):}
+\DoxyCodeLine{11     x(xCord),y(yCord) , z(zCord) \{ \}}
+\DoxyCodeLine{12 \};}
+\DoxyCodeLine{13 \textcolor{keyword}{struct }\mbox{\hyperlink{structface}{face}} \{}
+\DoxyCodeLine{14     uint x;}
+\DoxyCodeLine{15     uint y;}
+\DoxyCodeLine{16     uint z;}
+\DoxyCodeLine{17     \mbox{\hyperlink{structface}{face}}() \{ \}}
+\DoxyCodeLine{18     \mbox{\hyperlink{structface}{face}}(\textcolor{keyword}{const} uint xCord,\textcolor{keyword}{const} uint yCord,\textcolor{keyword}{const} uint zCord):}
+\DoxyCodeLine{19     x(xCord),y(yCord) , z(zCord) \{ \}}
+\DoxyCodeLine{20 \};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{typedef} std::vector<vertex> vtxArray;}
+\DoxyCodeLine{23 \textcolor{keyword}{typedef} std::vector<face> faceArray;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{class_base_model}{BaseModel}} \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_base_model}{BaseModel}}();}
+\DoxyCodeLine{28     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_base_model}{\string~BaseModel}}();}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_base_model_a5ec5a1dd45d9203bf11b30ab1b8bacc2}{updateModelSourceFile}}(QString file);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{38     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_base_model_a96e9f48b875eb23197aec3a13b223142}{LoadMdl}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{44     vtxArray \mbox{\hyperlink{class_base_model_a980688e1527fb61b0141373cd2076396}{GetVertices}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{50     faceArray \mbox{\hyperlink{class_base_model_a0ea988404c6c2bf0d71527e627a9e5a8}{GetFaces}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{56     vtxArray \mbox{\hyperlink{class_base_model_a4de86f6edfe7d6398228c929eeccc722}{GetNormals}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{59     QFile* modelFile;       }
+\DoxyCodeLine{60     vtxArray \mbox{\hyperlink{class_base_model_acf8c4c09385d9592f641cc3290a4b7d5}{vtxArr}};        }
+\DoxyCodeLine{61     vtxArray \mbox{\hyperlink{class_base_model_a059e350547042f352f7c978f74e13e8a}{normalsArr}};    }
+\DoxyCodeLine{62     faceArray \mbox{\hyperlink{class_base_model_af21ab43f9d3e7450cebb4e7a234f8933}{fArr}};         }
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BASEMODEL\_H}}
+
+\end{DoxyCode}

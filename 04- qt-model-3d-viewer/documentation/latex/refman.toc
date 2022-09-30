@@ -1,0 +1,77 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble }{}
+\contentsline {chapter}{\numberline {1}Hierarchical Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Class Hierarchy}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}
+\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Base\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Model Class Reference}{7}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Member Function Documentation}{7}{subsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1.1}GetFaces()}{8}{subsubsection.4.1.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1.2}GetNormals()}{8}{subsubsection.4.1.1.2}
+\contentsline {subsubsection}{\numberline {4.1.1.3}GetVertices()}{8}{subsubsection.4.1.1.3}
+\contentsline {subsubsection}{\numberline {4.1.1.4}LoadMdl()}{8}{subsubsection.4.1.1.4}
+\contentsline {subsubsection}{\numberline {4.1.1.5}updateModelSourceFile()}{8}{subsubsection.4.1.1.5}
+\contentsline {subsection}{\numberline {4.1.2}Member Data Documentation}{9}{subsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.2.1}fArr}{9}{subsubsection.4.1.2.1}
+\contentsline {subsubsection}{\numberline {4.1.2.2}normalsArr}{9}{subsubsection.4.1.2.2}
+\contentsline {subsubsection}{\numberline {4.1.2.3}vtxArr}{9}{subsubsection.4.1.2.3}
+\contentsline {section}{\numberline {4.2}Camera\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}t Struct Reference}{9}{section.4.2}
+\contentsline {section}{\numberline {4.3}Custom\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Slider Class Reference}{10}{section.4.3}
+\contentsline {section}{\numberline {4.4}face Struct Reference}{10}{section.4.4}
+\contentsline {section}{\numberline {4.5}Main\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Window Class Reference}{10}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Member Function Documentation}{11}{subsection.4.5.1}
+\contentsline {subsubsection}{\numberline {4.5.1.1}keyPressEvent}{11}{subsubsection.4.5.1.1}
+\contentsline {subsubsection}{\numberline {4.5.1.2}onBtnLoadModelClicked}{11}{subsubsection.4.5.1.2}
+\contentsline {section}{\numberline {4.6}Model\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Obj Class Reference}{11}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Member Function Documentation}{12}{subsection.4.6.1}
+\contentsline {subsubsection}{\numberline {4.6.1.1}LoadMdl()}{12}{subsubsection.4.6.1.1}
+\contentsline {section}{\numberline {4.7}Model\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Stl Class Reference}{12}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Member Function Documentation}{12}{subsection.4.7.1}
+\contentsline {subsubsection}{\numberline {4.7.1.1}LoadMdl()}{13}{subsubsection.4.7.1.1}
+\contentsline {section}{\numberline {4.8}Open\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}GLView Class Reference}{13}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Member Function Documentation}{14}{subsection.4.8.1}
+\contentsline {subsubsection}{\numberline {4.8.1.1}directionalLightMode}{14}{subsubsection.4.8.1.1}
+\contentsline {subsubsection}{\numberline {4.8.1.2}keyPressEvent()}{14}{subsubsection.4.8.1.2}
+\contentsline {subsubsection}{\numberline {4.8.1.3}modelXPosition}{15}{subsubsection.4.8.1.3}
+\contentsline {subsubsection}{\numberline {4.8.1.4}modelXRotation}{15}{subsubsection.4.8.1.4}
+\contentsline {subsubsection}{\numberline {4.8.1.5}modelXRotationChanged}{15}{subsubsection.4.8.1.5}
+\contentsline {subsubsection}{\numberline {4.8.1.6}modelYPosition}{15}{subsubsection.4.8.1.6}
+\contentsline {subsubsection}{\numberline {4.8.1.7}modelYRotation}{16}{subsubsection.4.8.1.7}
+\contentsline {subsubsection}{\numberline {4.8.1.8}modelZPosition}{16}{subsubsection.4.8.1.8}
+\contentsline {subsubsection}{\numberline {4.8.1.9}modelZRotation}{16}{subsubsection.4.8.1.9}
+\contentsline {subsubsection}{\numberline {4.8.1.10}paintModelFromFile()}{16}{subsubsection.4.8.1.10}
+\contentsline {subsubsection}{\numberline {4.8.1.11}scaleFactor}{17}{subsubsection.4.8.1.11}
+\contentsline {subsubsection}{\numberline {4.8.1.12}setAmbientLightB}{17}{subsubsection.4.8.1.12}
+\contentsline {subsubsection}{\numberline {4.8.1.13}setAmbientLightG}{17}{subsubsection.4.8.1.13}
+\contentsline {subsubsection}{\numberline {4.8.1.14}setAmbientLightR}{17}{subsubsection.4.8.1.14}
+\contentsline {subsubsection}{\numberline {4.8.1.15}setCameraXPosition}{18}{subsubsection.4.8.1.15}
+\contentsline {subsubsection}{\numberline {4.8.1.16}setCameraYPosition}{18}{subsubsection.4.8.1.16}
+\contentsline {subsubsection}{\numberline {4.8.1.17}setCameraZPosition}{18}{subsubsection.4.8.1.17}
+\contentsline {subsubsection}{\numberline {4.8.1.18}setDiffuseLightB}{18}{subsubsection.4.8.1.18}
+\contentsline {subsubsection}{\numberline {4.8.1.19}setDiffuseLightG}{19}{subsubsection.4.8.1.19}
+\contentsline {subsubsection}{\numberline {4.8.1.20}setDiffuseLightR}{19}{subsubsection.4.8.1.20}
+\contentsline {subsubsection}{\numberline {4.8.1.21}setDirectionalLightMode}{19}{subsubsection.4.8.1.21}
+\contentsline {subsubsection}{\numberline {4.8.1.22}setLightIntensity}{20}{subsubsection.4.8.1.22}
+\contentsline {subsubsection}{\numberline {4.8.1.23}setLightXPosition}{20}{subsubsection.4.8.1.23}
+\contentsline {subsubsection}{\numberline {4.8.1.24}setLightYPosition}{20}{subsubsection.4.8.1.24}
+\contentsline {subsubsection}{\numberline {4.8.1.25}setLightZPosition}{20}{subsubsection.4.8.1.25}
+\contentsline {subsubsection}{\numberline {4.8.1.26}setModelXPosition}{21}{subsubsection.4.8.1.26}
+\contentsline {subsubsection}{\numberline {4.8.1.27}setModelYPosition}{21}{subsubsection.4.8.1.27}
+\contentsline {subsubsection}{\numberline {4.8.1.28}setModelZPosition}{21}{subsubsection.4.8.1.28}
+\contentsline {subsubsection}{\numberline {4.8.1.29}setScale}{22}{subsubsection.4.8.1.29}
+\contentsline {subsubsection}{\numberline {4.8.1.30}setSpecularLightB}{22}{subsubsection.4.8.1.30}
+\contentsline {subsubsection}{\numberline {4.8.1.31}setSpecularLightG}{22}{subsubsection.4.8.1.31}
+\contentsline {subsubsection}{\numberline {4.8.1.32}setSpecularLightR}{22}{subsubsection.4.8.1.32}
+\contentsline {subsubsection}{\numberline {4.8.1.33}setXRotation}{23}{subsubsection.4.8.1.33}
+\contentsline {subsubsection}{\numberline {4.8.1.34}setYRotation}{23}{subsubsection.4.8.1.34}
+\contentsline {subsubsection}{\numberline {4.8.1.35}setZRotation}{23}{subsubsection.4.8.1.35}
+\contentsline {section}{\numberline {4.9}vertex Struct Reference}{24}{section.4.9}
+\contentsline {chapter}{\numberline {5}File Documentation}{25}{chapter.5}
+\contentsline {section}{\numberline {5.1}Base\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Model.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}h}{25}{section.5.1}
+\contentsline {section}{\numberline {5.2}Custom\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Slider.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}h}{25}{section.5.2}
+\contentsline {section}{\numberline {5.3}mainwindow.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}h}{26}{section.5.3}
+\contentsline {section}{\numberline {5.4}modelobj.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}h}{27}{section.5.4}
+\contentsline {section}{\numberline {5.5}modelstl.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}h}{27}{section.5.5}
+\contentsline {section}{\numberline {5.6}openglview.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}h}{27}{section.5.6}

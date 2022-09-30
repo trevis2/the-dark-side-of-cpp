@@ -1,0 +1,27 @@
+\hypertarget{modelstl_8h_source}{}\doxysection{modelstl.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MODELSTL\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MODELSTL\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QtCore>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QFile>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}BaseModel.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_model_stl}{ModelStl}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_base_model}{BaseModel}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9 \textcolor{keyword}{public}:}
+\DoxyCodeLine{10     \mbox{\hyperlink{class_model_stl}{ModelStl}}();}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{15     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_stl_abd995c688dd3a23dfe86e24b25bd2ff8}{LoadMdl}}() \textcolor{keyword}{override}; \textcolor{comment}{//Load model file}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17  \textcolor{keyword}{private}:}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} readBinary();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} readText();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{34     \mbox{\hyperlink{structvertex}{vertex}} coordinateFromString(\textcolor{keyword}{const} QString \&line);}
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MODELSTL\_H}}
+
+\end{DoxyCode}

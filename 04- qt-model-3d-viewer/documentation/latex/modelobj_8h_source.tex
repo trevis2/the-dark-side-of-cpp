@@ -1,0 +1,25 @@
+\hypertarget{modelobj_8h_source}{}\doxysection{modelobj.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MODELOBJ\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MODELOBJ\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QtCore>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QFile>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}BaseModel.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_model_obj}{ModelObj}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_base_model}{BaseModel}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9 \textcolor{keyword}{public}:}
+\DoxyCodeLine{10     \mbox{\hyperlink{class_model_obj}{ModelObj}}();}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{15     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_obj_a66a8e01d3bd871fefce6ca13383b4e62}{LoadMdl}}() \textcolor{keyword}{override}; \textcolor{comment}{//Load model file}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{private}:}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} ParseVertexData(QByteArray line);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} ParseFacesData(QByteArray line);}
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MODELOBJ\_H}}
+
+\end{DoxyCode}

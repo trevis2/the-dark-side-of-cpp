@@ -1,0 +1,163 @@
+\hypertarget{openglview_8h_source}{}\doxysection{openglview.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GLWIN\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GLWIN\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QtGui>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QGLWidget>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QtOpenGL>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <QTimer>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}BaseModel.h"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14     GLfloat posX,posY,posZ;}
+\DoxyCodeLine{15     GLfloat rotX,rotY,rotZ;}
+\DoxyCodeLine{16     QPoint  lastPos;}
+\DoxyCodeLine{17 \}}
+\DoxyCodeLine{18 \mbox{\hyperlink{struct_camera__t}{Camera\_t}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_open_g_l_view}{OpenGLView}} : \textcolor{keyword}{public} QGLWidget}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     Q\_OBJECT}
+\DoxyCodeLine{23     }
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_open_g_l_view}{OpenGLView}}(QWidget *parent = 0);}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_open_g_l_view}{\string~OpenGLView}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_a22567fcd4e3c0e92817b55e6d393ded9}{keyPressEvent}}(QKeyEvent *ke) \textcolor{keyword}{override};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_a4202c7e9f13aa0b5486733f1b7f97a8b}{paintModelFromFile}}(\textcolor{keyword}{const} QString filePath);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_aea80959f086f420807d57c447b52a626}{setDirectionalLightMode}}(\textcolor{keyword}{const} \textcolor{keywordtype}{bool} isDirectional);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{52     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_open_g_l_view_ac9dce7a290fa6fe8267f1c5b2ec7b095}{directionalLightMode}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_isDirectionalLight; \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_ac18c3565a551d84dad1cf799dfc28b1f}{setXRotation}}(\textcolor{keywordtype}{int} xAngle);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{64     \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_open_g_l_view_ad2b5a01f5fe262d14f100d1a26a2f2b6}{modelXRotation}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} qRound(m\_xRot); \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_ab139d50df8921893cd5a5ae5fccd75c2}{setYRotation}}(\textcolor{keywordtype}{int} yAngle);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{76     \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_open_g_l_view_a5456af565f84785b7143f66a2cc76db0}{modelYRotation}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} qRound(m\_yRot);\}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_a286ae8dda4024885de0fbba9b0ee077d}{setZRotation}}(\textcolor{keywordtype}{int} zAngle);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{88     \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_open_g_l_view_af260f7fbb4d351cb90dd708cb8c11218}{modelZRotation}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} qRound(m\_zRot);\}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{94     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_ab0254e72322d6f21c13cf3d4489c77c7}{setScale}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_open_g_l_view_a032b1c284bcf8535af1ee6d8650fd84e}{scaleFactor}});}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{100     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_open_g_l_view_a032b1c284bcf8535af1ee6d8650fd84e}{scaleFactor}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(scale * 10.0f);\}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{106     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_aaf87e13a0c7a1c5247b98687c383e8a5}{setLightIntensity}}(\textcolor{keywordtype}{int} intensity);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{112     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_ab7fa6ed5dec1adaf8f3fdeccba108b5b}{setLightXPosition}}(\textcolor{keywordtype}{int} xPosition);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{118     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_abbfeb81ca86f32cc9833997eb93a54c0}{setLightYPosition}}(\textcolor{keywordtype}{int} yPosition);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{124     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_af0cf417dcbd46a4a64884c8cfd8f85c8}{setLightZPosition}}(\textcolor{keywordtype}{int} zPosition);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{130     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_a5333a1f7a41e4585add144004e60072d}{setAmbientLightR}}(\textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{136     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_aa4b1dce62b24198abe5a228685fd3511}{setAmbientLightG}}(\textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{142     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_aaa2c2b4f04c9be81e6d9dcafca64a5bb}{setAmbientLightB}}(\textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{148     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_ad98a685eadecb935c0ac8e754e9fe26b}{setDiffuseLightR}}(\textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{154     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_aef61fb9913fb5d4a2bee593506f12f27}{setDiffuseLightG}}(\textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{160     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_af115216cffec19d5f40ed11fa9fbd063}{setDiffuseLightB}}(\textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{166     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_af1008cace89dc5aad8a07dabc97846db}{setSpecularLightR}}(\textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{172     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_aa6b51647ec7dde099b6e81627fd6cb1f}{setSpecularLightG}}(\textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{178     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_af40c7028f53b69932c329426c77346d3}{setSpecularLightB}}(\textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{184     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_a01528bd3b185e9eb2d1bfa13d6ad89d0}{setCameraXPosition}}(\textcolor{keywordtype}{int} xPosition);}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{190     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_a5ae893961e315009aeb4638d2a37d2fd}{setCameraYPosition}}(\textcolor{keywordtype}{int} yPosition);}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{196     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_a6cea2b24b91fe524c8b430db202cb17a}{setCameraZPosition}}(\textcolor{keywordtype}{int} zPosition);}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{202     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_a0d1c006fcb6876601a0673cda7809c59}{setModelXPosition}}(\textcolor{keywordtype}{int} xPosition);}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{208     \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_open_g_l_view_a2a6b7d8b51f1f58cafdae60aaa8cda2a}{modelXPosition}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(xTra);\}}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{214     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_aacd5a68c554702178279f82e8d14f1be}{setModelYPosition}}(\textcolor{keywordtype}{int} yPosition);}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{220     \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_open_g_l_view_a616f564ae3d04b035322c130926aa588}{modelYPosition}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(yTra);\}}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{226     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_a22fca344a5979d888d8ee3beae62576c}{setModelZPosition}}(\textcolor{keywordtype}{int} zPosition);}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{232     \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_open_g_l_view_a227981ce4ad778a22493d3b703f1a323}{modelZPosition}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(zTra);\}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234 \textcolor{keyword}{private}:}
+\DoxyCodeLine{240     \textcolor{keywordtype}{void} drawFloorGrid(\textcolor{keywordtype}{float} size, \textcolor{keywordtype}{float} step);}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{246     \textcolor{keywordtype}{void} drawAxis(GLfloat axisLength);}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{253     \textcolor{keywordtype}{void} wheelEvent(QWheelEvent *event) \textcolor{keyword}{override};}
+\DoxyCodeLine{254 \textcolor{keyword}{private}:}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{259     \textcolor{keywordtype}{void} initializeGL() \textcolor{keyword}{override};}
+\DoxyCodeLine{265     \textcolor{keywordtype}{void} resizeGL(\textcolor{keywordtype}{int} w, \textcolor{keywordtype}{int} h) \textcolor{keyword}{override};}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{270     \textcolor{keywordtype}{void} paintGL() \textcolor{keyword}{override};}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{279     \textcolor{keywordtype}{void} setFrustum(GLdouble fovY, GLdouble aspect, GLdouble zNear, GLdouble zFar);}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281  \textcolor{keyword}{private}:}
+\DoxyCodeLine{286     GLuint paintMdl();}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{291     \textcolor{keywordtype}{void} lights();}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293  \textcolor{keyword}{private}:}
+\DoxyCodeLine{294     \mbox{\hyperlink{class_base_model}{BaseModel}} *model;                   }
+\DoxyCodeLine{295     vtxArray vtxArr;                    }
+\DoxyCodeLine{296     QTimer *timer;                      }
+\DoxyCodeLine{297     ushort iRot;                        }
+\DoxyCodeLine{298     \textcolor{keywordtype}{float} m\_xRot;                       }
+\DoxyCodeLine{299     \textcolor{keywordtype}{float} m\_yRot;                       }
+\DoxyCodeLine{300     \textcolor{keywordtype}{float} m\_zRot;                       }
+\DoxyCodeLine{301     GLuint idx;                         }
+\DoxyCodeLine{302     GLfloat xTra, yTra, zTra;           }
+\DoxyCodeLine{303     GLuint fov;                         }
+\DoxyCodeLine{304     GLdouble zN;                        }
+\DoxyCodeLine{305     GLdouble zF;                        }
+\DoxyCodeLine{306     GLboolean shadingMode;              }
+\DoxyCodeLine{307     GLfloat LightAmbient[4];            }
+\DoxyCodeLine{308     GLfloat LightDiffuse[4];            }
+\DoxyCodeLine{309     GLfloat LightSpecular[4];           }
+\DoxyCodeLine{310     GLfloat LightPosition[4];           }
+\DoxyCodeLine{311     GLfloat CameraPosition[3];          }
+\DoxyCodeLine{312     GLfloat m\_lightIntensity;           }
+\DoxyCodeLine{313     \textcolor{keywordtype}{float} m\_lastDiffuseR = 0.0f ;       }
+\DoxyCodeLine{314     \textcolor{keywordtype}{float} m\_lastDiffuseG = 0.0f;        }
+\DoxyCodeLine{315     \textcolor{keywordtype}{float} m\_lastDiffuseB = 0.0f;        }
+\DoxyCodeLine{316     \textcolor{keywordtype}{bool} m\_isDirectionalLight;          }
+\DoxyCodeLine{317     \textcolor{keywordtype}{bool} wireFrameMode;                 }
+\DoxyCodeLine{318     \textcolor{keywordtype}{float} scale, s0;                    }
+\DoxyCodeLine{319     GLuint m\_gridLenght;                }
+\DoxyCodeLine{320     GLuint vao;                         }
+\DoxyCodeLine{321     \mbox{\hyperlink{struct_camera__t}{Camera\_t}} m\_camera;                  }
+\DoxyCodeLine{323  signals:}
+\DoxyCodeLine{324     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_open_g_l_view_a8297290c4a4742c42f4db90682b24f60}{modelXRotationChanged}}();}
+\DoxyCodeLine{325     \textcolor{keywordtype}{void} modelYRotationChanged();}
+\DoxyCodeLine{326     \textcolor{keywordtype}{void} modelZRotationChanged();}
+\DoxyCodeLine{327     \textcolor{keywordtype}{void} modelXPositionChanged();}
+\DoxyCodeLine{328     \textcolor{keywordtype}{void} modelYPositionChanged();}
+\DoxyCodeLine{329     \textcolor{keywordtype}{void} modelZPositionChanged();}
+\DoxyCodeLine{330     \textcolor{keywordtype}{void} scaleChanged();}
+\DoxyCodeLine{331 \};}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GLWIN\_H}}
+
+\end{DoxyCode}

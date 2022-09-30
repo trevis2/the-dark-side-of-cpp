@@ -1,9 +1,17 @@
 #include <iostream>
+#include <limits>
 
-using std::cin;
-using std::cout;
+using namespace std;
 
-void main()
+void getIntFromCin(int &value) {
+  while((cin >> value) == false) {
+  	cin.clear();
+  	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+  	cout << "Invalid input. Try again: ";
+  }
+}
+
+int main()
 {
     cout << "Ciao indovina i 3 numeri \n";
     int PrimoNum = 3;
@@ -17,11 +25,11 @@ void main()
     {
         int a, b, c;
         cout << "Inserisci il primo numero: \n";
-        cin >> a;
+	      getIntFromCin(a);
         cout << "Inserisci il secondo numero: \n";
-        cin >> b;
+        getIntFromCin(b);
         cout << "Inserisci il terzo numero: \n";
-        cin >> c;
+        getIntFromCin(c);
         int somma = a + b + c;
         if (somma == SommaNum)
         {
@@ -35,4 +43,5 @@ void main()
         }
     }
     cout << "Alla Prossima!";
+    return 0;
 }
