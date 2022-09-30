@@ -1,3 +1,0 @@
-C:/GitHubProjects/the-dark-side-of-cpp/03-basic-count-text/build/CMakeFiles/count_text.dir
-C:/GitHubProjects/the-dark-side-of-cpp/03-basic-count-text/build/CMakeFiles/ALL_BUILD.dir
-C:/GitHubProjects/the-dark-side-of-cpp/03-basic-count-text/build/CMakeFiles/ZERO_CHECK.dir
