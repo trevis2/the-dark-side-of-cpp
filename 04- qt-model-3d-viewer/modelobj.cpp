@@ -1,37 +1,14 @@
 #include "modelobj.h"
-// Just set numeric locale to C standart
-ModelObj::ModelObj()
-{
-    objFile = nullptr;
-    #ifdef Q_OS_LINUX
-    setlocale(LC_NUMERIC, "C");
-    #endif
-}
 
-ModelObj::~ModelObj()
+ModelObj::ModelObj(): BaseModel()
 {
-    objFile->close();
-}
-
-void ModelObj::updateModelSourceFile(QString file)
-{
-    qDebug() << Q_FUNC_INFO << file;
-    if(objFile != nullptr) {
-        delete objFile;
-        objFile = nullptr;
-    }
-    objFile = new QFile(file);
-    objFile->setFileName(file);
-    #ifdef Q_OS_LINUX
-    setlocale(LC_NUMERIC, "C");
-    #endif
-    LoadMdl();
 
 }
+
 
 void ModelObj::LoadMdl()
 {
-    if(!objFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
+    if(!modelFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
         //Error loading file
         qDebug("Loading obj model failed");
         return;
@@ -42,8 +19,8 @@ void ModelObj::LoadMdl()
     if(fArr.size() >0) {
         fArr.clear();
     }
-    while(!objFile->atEnd()) {
-        QByteArray line = objFile->readLine();
+    while(!modelFile->atEnd()) {
+        QByteArray line = modelFile->readLine();
         switch(line.at(0))
         {
         case 'v':
@@ -54,24 +31,6 @@ void ModelObj::LoadMdl()
             break;
         }
     }
-}
-
-vtxArray ModelObj::GetVertices()
-{
-    //Check for vtxArr consistency
-    if(vtxArr.capacity() == 0) {
-        qDebug("Vertex array is empty:");
-        if(!objFile->isOpen())
-            qDebug("Model file not loaded!");
-        else
-            qDebug("Something goes wrong!");
-    }
-    return vtxArr;
-}
-
-faceArray ModelObj::GetFaces()
-{
-    return fArr;
 }
 
 void ModelObj::ParseVertexData(QByteArray line) {

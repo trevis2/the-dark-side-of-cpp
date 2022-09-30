@@ -6,5 +6,11 @@
         <file>Models/Patrick.obj</file>
         <file>Models/Cube_tri.obj</file>
         <file>Models/suzanne.obj</file>
+        <file>Models/Darth.stl</file>
+        <file>Models/cube.stl</file>
+        <file>Models/eyeball.stl</file>
+        <file>Models/holecube.stl</file>
+        <file>Models/pyramid.stl</file>
+        <file>Models/torus.stl</file>
     </qresource>
 </RCC>
