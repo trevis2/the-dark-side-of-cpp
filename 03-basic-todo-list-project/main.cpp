@@ -56,7 +56,7 @@ std::vector<std::string> RimuoviElemento(std::vector<std::string> lista)
 
 int main(int argc, char **argv)
 {
-    std::cout << "Questo Programma gestisce una todo list. Puoi aggiungere un oggetto o rimuoverlo selezionando + o -, per uscire premi ESC " << std::endl;
+    std::cout << "Questo Programma gestisce una todo list. Puoi aggiungere un oggetto o rimuoverlo selezionando + o -" << std::endl;
 
     std::vector<std::string> todolist;
     while (true)
