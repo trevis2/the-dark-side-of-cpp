@@ -35,7 +35,8 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "tuple": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "iterator": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
