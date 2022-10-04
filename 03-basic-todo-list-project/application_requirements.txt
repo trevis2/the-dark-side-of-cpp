@@ -1,0 +1,8 @@
+This Application is a Todo list application.
+
+Create a console application where you can:
+
+- insert a task with a description. 
+- delete a chosen task.
+- consult the list of tasks inserted.
+- exit from application.
