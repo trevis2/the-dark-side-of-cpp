@@ -6,3 +6,17 @@ Create a console application where you can:
 - delete a chosen task.
 - consult the list of tasks inserted.
 - exit from application.
+- export on json file
+{
+    [
+        {
+            "index":"{value_index}",    
+            "text":"{value_txt}"
+        },
+        {
+            "index":"{value_index}",
+            "text":"{value_txt}"
+        }
+    ]
+    
+}
