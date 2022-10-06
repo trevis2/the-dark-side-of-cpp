@@ -7,16 +7,13 @@ Create a console application where you can:
 - consult the list of tasks inserted.
 - exit from application.
 - export on json file
-{
-    [
-        {
-            "index":"{value_index}",    
-            "text":"{value_txt}"
-        },
-        {
-            "index":"{value_index}",
-            "text":"{value_txt}"
-        }
-    ]
-    
-}
+[
+    {
+        "index": 0,    
+        "text":"value_txt"
+    },
+    {
+        "index": 1,
+        "text":"value_txt"
+    }
+]
