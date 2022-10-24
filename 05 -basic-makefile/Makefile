@@ -14,13 +14,13 @@ BINS := foo
 all: main
 
 main: main.o
-	        @echo "Checking.."
-	        ${CC} -lm main.o -o main
+	@echo "Checking.."
+	${CC} -lm main.o -o main
 
 main.o: main.cpp
-	        @echo "Creating object.."
-	        ${CC} -c main.cpp
+	@echo "Creating object.."
+	${CC} -c main.cpp
 
 clean:
-	        @echo "Cleaning up..."
-	        rm -rvf f main.o main
+	@echo "Cleaning up..."
+	rm -rvf f main.o main
